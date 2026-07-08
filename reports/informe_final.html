@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Informe final v1</title>
+<style>
+body { font-family: Arial, sans-serif; margin: 0; background: #f8fafc; color: #1f2937; }
+main { max-width: 1180px; margin: 0 auto; padding: 28px; }
+h1, h2, h3 { color: #111827; }
+.lead { font-size: 1.05rem; line-height: 1.55; }
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; }
+.card { background: #fff; border: 1px solid #e5e7eb; border-radius: 12px; padding: 18px; margin: 16px 0; }
+.stat { font-size: 1.8rem; font-weight: 700; margin: 6px 0; }
+.caption { color: #64748b; font-size: .9rem; }
+img { max-width: 100%; height: auto; display: block; }
+table { width: 100%; border-collapse: collapse; background: #fff; }
+th, td { border-bottom: 1px solid #e5e7eb; padding: 9px 10px; text-align: left; }
+th { background: #f1f5f9; }
+code { background: #eef2f7; padding: 2px 4px; border-radius: 4px; }
+</style>
+</head>
+<body><main>
+<h1>Informe final v1: siniestralidad en construcción</h1>
+<p class="lead">Cierre de la primera base histórica 2008-2025. El objetivo es describir evolución, exposición y relaciones con actividad económica usando fuentes oficiales trazables.</p>
+<div class="grid">
+  <div class="card"><div class="caption">Cobertura temporal</div><div class="stat">2008-2025</div></div>
+  <div class="card"><div class="caption">Cambio índice incidencia</div><div class="stat">-47,5%</div></div>
+  <div class="card"><div class="caption">Cambio accidentes / 1.000 afiliados</div><div class="stat">-33,6%</div></div>
+  <div class="card"><div class="caption">Accidentes 2030 central</div><div class="stat">104.498</div></div>
+</div>
+
+<section class="card">
+<h2>Leyenda metodológica: qué es el EIPIC</h2>
+<p><strong>EIPIC</strong> significa <em>Encuesta de Índices de Producción de la Industria de la Construcción</em>. Es un indicador coyuntural que mide la evolución de la actividad productiva de las empresas de la construcción en España. En este informe se usa como proxy de actividad general del sector, complementando vivienda iniciada/terminada y afiliación.</p>
+<p>La serie está expresada en <strong>base 2021=100</strong>: un valor 120 indica un nivel de producción aproximadamente un 20% superior al promedio de 2021, y un valor 90 indica un nivel aproximadamente un 10% inferior. No mide accidentes ni trabajadores; mide actividad económica/productiva.</p>
+<p>De forma simplificada, el cálculo parte de la producción o cifra de negocio de las empresas constructoras, ajustada por elementos de obra y subcontratación, y deflactada por costes para obtener una medida de producción en términos comparables. El índice agregado de construcción combina las divisiones de la sección F de la CNAE-2009: 41 Edificación, 42 Ingeniería civil y 43 Actividades de construcción especializada, con ponderaciones de la base 2021.</p>
+<p class="caption">Fuente metodológica: Ministerio de Transportes y Movilidad Sostenible, EIPIC base 2021; continuidad desde 2026 bajo el INE como IPCO.</p>
+</section>
+
+<section class="card"><h2>Hallazgos principales</h2>
+<ul>
+<li>La serie ya permite analizar accidentes absolutos, mortalidad, afiliación, vivienda, Euribor y producción EIPIC con alta cobertura.</li>
+<li>La normalización por afiliación evita confundir volumen de actividad con riesgo relativo.</li>
+<li>Las correlaciones con actividad deben leerse como señales exploratorias: el periodo mezcla crisis, recuperación, pandemia y postpandemia.</li>
+<li>La simulación 2026-2030 proyecta accidentes y mortales con regresión temporal y muestra su evolución normalizada frente a viviendas iniciadas.</li>
+</ul></section>
+<section class="card"><h2>Mejores correlaciones exploratorias</h2><table><thead><tr><th>Relación</th><th>n</th><th>r</th></tr></thead><tbody><tr><td>Afiliación mismo año vs Accidentes con baja</td><td>18</td><td>0,98</td></tr><tr><td>Viviendas iniciadas mismo año vs Accidentes con baja</td><td>18</td><td>0,97</td></tr><tr><td>Afiliación mismo año vs Accidentes mortales</td><td>18</td><td>0,95</td></tr><tr><td>Viviendas iniciadas mismo año vs Accidentes mortales</td><td>18</td><td>0,94</td></tr><tr><td>Viviendas iniciadas mismo año vs Accidentes / 1.000 afiliados</td><td>18</td><td>0,92</td></tr><tr><td>Viviendas terminadas mismo año vs Accidentes con baja</td><td>18</td><td>0,91</td></tr></tbody></table></section>
+<section class="card"><h2>Foco especifico: EIPIC y siniestralidad</h2>
+<p>El EIPIC sí muestra una relación positiva con la siniestralidad, especialmente cuando se usa con un año de retardo. La lectura más fuerte es <strong>EIPIC t-1 vs accidentes con baja</strong>, con una correlación de <strong>r = 0,70</strong>, seguida de <strong>EIPIC t-1 vs accidentes por 1.000 afiliados</strong>, con <strong>r = 0,65</strong>. Esto es coherente con la idea de que una mayor actividad productiva puede anticipar más exposición al riesgo.</p>
+<p>Sin embargo, no es el indicador más correlacionado. Afiliación y viviendas iniciadas tienen correlaciones más altas con accidentes absolutos porque capturan de forma más directa el volumen de trabajadores expuestos y el ciclo residencial. EIPIC es más amplio y agregado: incluye edificación, ingeniería civil y actividades especializadas, por lo que aporta contexto sectorial, pero mezcla tipos de obra con perfiles de riesgo distintos.</p>
+<table><thead><tr><th>Relación EIPIC</th><th>n</th><th>r</th></tr></thead><tbody><tr><td>EIPIC producción t-1 vs Accidentes con baja</td><td>16</td><td>0,70</td></tr><tr><td>EIPIC producción t-1 vs Accidentes / 1.000 afiliados</td><td>16</td><td>0,65</td></tr><tr><td>EIPIC producción mismo año vs Accidentes con baja</td><td>17</td><td>0,60</td></tr><tr><td>EIPIC producción mismo año vs Accidentes / 1.000 afiliados</td><td>17</td><td>0,58</td></tr><tr><td>EIPIC producción mismo año vs Accidentes mortales</td><td>17</td><td>0,56</td></tr><tr><td>EIPIC producción t-1 vs Accidentes mortales</td><td>16</td><td>0,51</td></tr><tr><td>EIPIC producción t-1 vs Índice incidencia</td><td>16</td><td>0,44</td></tr><tr><td>EIPIC producción mismo año vs Índice incidencia</td><td>17</td><td>0,34</td></tr></tbody></table>
+<p class="caption">Interpretación: valores positivos indican que mayor producción sectorial tiende a coincidir, o a anticipar, mayor siniestralidad. No implica causalidad por sí solo.</p>
+</section>
+<section class="card"><h2>Foco especifico: accidentes mortales y factores de actividad</h2>
+<p>Para contrastar si la mortalidad sigue el mismo patrón que los accidentes con baja, se calculan correlaciones entre <strong>accidentes mortales</strong> y los factores con más impacto en los accidentes con baja: afiliación, viviendas iniciadas, viviendas terminadas, Euribor y EIPIC. Esta tabla debe leerse con más prudencia que la de accidentes con baja, porque los mortales son muchos menos casos y pueden depender de factores cualitativos que no están en el dataset: tipo de tarea, gravedad potencial, edad, patologías no traumáticas, subcontratación, tamaño de obra o medidas preventivas.</p>
+<table><thead><tr><th>Relación con accidentes mortales</th><th>n</th><th>r</th></tr></thead><tbody><tr><td>Afiliación mismo año vs Accidentes mortales</td><td>18</td><td>0,95</td></tr><tr><td>Viviendas iniciadas mismo año vs Accidentes mortales</td><td>18</td><td>0,94</td></tr><tr><td>Viviendas terminadas mismo año vs Accidentes mortales</td><td>18</td><td>0,79</td></tr><tr><td>Euribor 12m mismo año vs Accidentes mortales</td><td>18</td><td>0,74</td></tr><tr><td>Viviendas iniciadas t-1 vs Accidentes mortales</td><td>17</td><td>0,73</td></tr><tr><td>Afiliación t-1 vs Accidentes mortales</td><td>17</td><td>0,69</td></tr><tr><td>EIPIC producción mismo año vs Accidentes mortales</td><td>17</td><td>0,56</td></tr><tr><td>EIPIC producción t-1 vs Accidentes mortales</td><td>16</td><td>0,51</td></tr><tr><td>Euribor 12m t-1 vs Accidentes mortales</td><td>17</td><td>0,50</td></tr><tr><td>Viviendas terminadas t-1 vs Accidentes mortales</td><td>17</td><td>0,44</td></tr></tbody></table>
+<p class="caption">Interpretación: si estas correlaciones son menores o menos estables que las de accidentes con baja, sugiere que la mortalidad no depende solo del volumen de actividad, sino también de la composición y peligrosidad de las tareas.</p>
+</section>
+<section class="card"><h2>Foco especifico: formas de accidentes mortales</h2>
+<p>Para alinear estrategias preventivas, se extraen las principales formas mortales publicadas por año y se agrupan en categorias preventivas. Las cifras son estimaciones porque proceden del porcentaje anual aplicado al total de accidentes mortales de construcción.</p>
+<table><thead><tr><th>Categoria preventiva</th><th>Mortales estimados</th><th>Apariciones</th><th>Estrategia prioritaria</th></tr></thead><tbody><tr><td>Patologias no traumaticas</td><td>441,6</td><td>14</td><td>Vigilancia de la salud, aptitud, factores cardiovasculares y organizacion de emergencias.</td></tr><tr><td>Atrapamientos, aplastamientos y sepultamientos</td><td>408,3</td><td>15</td><td>Planificar excavaciones, entibaciones, segregacion de zonas, maniobras con maquinaria y recurso preventivo.</td></tr><tr><td>Golpes y choques contra objetos</td><td>359,2</td><td>12</td><td>Orden y limpieza, circulaciones, acopios, protecciones colectivas, maniobras y control de interferencias.</td></tr></tbody></table>
+<p class="caption">Detalle completo en <code>construccion_formas_mortales.html</code> y <code>construccion_formas_mortales_construccion.csv</code>.</p>
+</section>
+<section class="card"><h2>Calidad de datos principal</h2><table><thead><tr><th>Variable</th><th>Cobertura</th><th>%</th></tr></thead><tbody><tr><td><code>accidentes_con_baja_jornada_construccion</code></td><td>18/18</td><td>100%</td></tr><tr><td><code>accidentes_mortales_construccion_total</code></td><td>18/18</td><td>100%</td></tr><tr><td><code>accidentes_por_1000_afiliados</code></td><td>18/18</td><td>100%</td></tr><tr><td><code>afiliados_ss_construccion</code></td><td>18/18</td><td>100%</td></tr><tr><td><code>euribor_12m_medio_pct</code></td><td>18/18</td><td>100%</td></tr><tr><td><code>indice_incidencia_construccion_total</code></td><td>18/18</td><td>100%</td></tr><tr><td><code>mortales_por_100000_afiliados</code></td><td>18/18</td><td>100%</td></tr><tr><td><code>viviendas_iniciadas</code></td><td>18/18</td><td>100%</td></tr><tr><td><code>viviendas_iniciadas_por_1000_afiliados</code></td><td>18/18</td><td>100%</td></tr><tr><td><code>viviendas_terminadas</code></td><td>18/18</td><td>100%</td></tr><tr><td><code>viviendas_terminadas_por_1000_afiliados</code></td><td>18/18</td><td>100%</td></tr><tr><td><code>indice_mortalidad_construccion</code></td><td>17/18</td><td>94,4%</td></tr></tbody></table></section>
+<section class="card"><h2>Límites metodológicos</h2>
+<ul>
+<li>Afiliación 2008 procede de media de cierres mensuales de Seguridad Social, no de la misma exportación anual del Observatorio.</li>
+<li>EIPIC base 2021 empieza en 2009; 2008 queda vacío para no imputar sin trazabilidad.</li>
+<li>Faltan horas trabajadas, temporalidad EPA y panel territorial para una lectura causal más sólida.</li>
+</ul></section>
+<p class="caption">Artefactos relacionados: <code>construccion_historico_2008_2025.html</code>, <code>construccion_cruce_analisis.html</code>, <code>construccion_formas_mortales.html</code>, <code>construccion_simulacion_5_anios.html</code>, <code>construccion_correlaciones_lags.csv</code>, <code>construccion_formas_mortales_construccion.csv</code>, <code>construccion_modelo_regresion_simple.csv</code>, <code>construccion_simulacion_5_anios.csv</code>.</p>
+</main></body>
+</html>
