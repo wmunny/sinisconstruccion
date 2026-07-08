@@ -43,12 +43,6 @@ python -m http.server 8000
 
 Y abrir `http://localhost:8000`.
 
-## Publicacion (GitHub Pages)
-
-El sitio esta preparado para GitHub Pages. En **Settings > Pages**, seleccionar
-"Deploy from a branch" con la rama principal y la carpeta raiz `/`. El fichero
-`.nojekyll` evita el procesado Jekyll.
-
 ## Estructura
 
 ```
