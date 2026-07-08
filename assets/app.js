@@ -55,14 +55,6 @@ const REPORTS = [
     desc: "Proyeccion por regresion, ratios normalizados y conclusiones de sostenibilidad preventiva.",
     file: "reports/simulacion_5_anios.html",
   },
-  {
-    slug: "modelo",
-    num: 7,
-    badge: "Modelo",
-    title: "Modelo predictivo",
-    desc: "Primer modelo predictivo exploratorio con predicciones y errores por ano.",
-    file: "reports/modelo_simple.html",
-  },
 ];
 
 const bySlug = (slug) => REPORTS.find((r) => r.slug === slug);
