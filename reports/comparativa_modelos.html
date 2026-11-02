@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Regresión frente a TimesFM 2.0</title>
+<style>
+:root{--ink:#172033;--muted:#667085;--card:#fff;--line:#d9e0ea;--brand:#ef6c35;--blue:#2878bd;--green:#128c6a}
+*{box-sizing:border-box} body{margin:0;background:#f4f6f9;color:var(--ink);font:15px/1.55 system-ui,sans-serif}
+main{max-width:1160px;margin:auto;padding:32px 22px 64px} h1{font-size:clamp(28px,4vw,45px);margin:0 0 8px}
+h2{margin:0 0 14px} .lead{font-size:18px;color:var(--muted);max-width:900px}
+.kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:25px 0}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px;margin:16px 0;box-shadow:0 6px 20px #1b263b0b}
+.kpi strong{display:block;font-size:30px} .kpi span,.note{color:var(--muted)} .tag{color:var(--brand);font-weight:750}
+.chart{display:block;width:100%;min-height:260px} .grid line{stroke:#e5eaf1} .grid text,.axis text{fill:#667085;font-size:12px}
+.actual,.serie{fill:none;stroke-width:3} .actual{stroke:var(--blue)}
+.serie-timesfm{stroke:var(--brand);stroke-dasharray:8 5} .serie-regresion{stroke:var(--green);stroke-dasharray:2 6}
+.band{fill:#ef6c3525} .divider{stroke:#98a2b3;stroke-dasharray:3 5}
+.legend text{font-size:13px;font-weight:700} .legend .l-actual{fill:var(--blue)} .legend .l-timesfm{fill:var(--brand)} .legend .l-regresion{fill:var(--green)}
+table{width:100%;border-collapse:collapse} th,td{padding:11px;border-bottom:1px solid var(--line);text-align:right}
+th:first-child,td:first-child{text-align:left} .up{color:#b42318;font-weight:650} .down{color:#128c6a;font-weight:650}
+code{background:#eef2f6;padding:2px 5px;border-radius:4px} @media(max-width:700px){.kpis{grid-template-columns:1fr}.card{overflow:auto}}
+</style></head><body><main>
+<span class="tag">COMPARATIVA DE MODELOS</span>
+<h1>Regresión lineal frente a TimesFM 2.0</h1>
+<p class="lead">Las dos previsiones 2026–2030 se calculan sobre el mismo histórico 2008–2025, pero con enfoques distintos: la regresión usa variables económicas rezagadas (afiliación, vivienda iniciada y EIPIC) y TimesFM 2.0 extrapola la serie en modo zero-shot sin ninguna variable externa.</p>
+<section class="kpis">
+  <div class="card kpi"><span>Accidentes 2030 · diferencia</span><strong>−26.251</strong><span>TimesFM frente a la regresión</span></div>
+  <div class="card kpi"><span>Mortales 2030 · diferencia</span><strong>−3</strong><span>TimesFM frente a la regresión</span></div>
+  <div class="card kpi"><span>Base común</span><strong>2008–2025</strong><span>18 observaciones anuales</span></div>
+</section>
+
+<section class="card"><h2>Accidentes con baja</h2>
+    <svg class="chart" viewBox="0 0 960 360" role="img" aria-label="Comparativa de accidentes con baja">
+      <g class="grid"><line x1="72" y1="312.0" x2="936" y2="312.0"/><text x="62" y="316.0" text-anchor="end">0</text><line x1="72" y1="244.0" x2="936" y2="244.0"/><text x="62" y="248.0" text-anchor="end">52.263</text><line x1="72" y1="176.0" x2="936" y2="176.0"/><text x="62" y="180.0" text-anchor="end">104.527</text><line x1="72" y1="108.0" x2="936" y2="108.0"/><text x="62" y="112.0" text-anchor="end">156.790</text><line x1="72" y1="40.0" x2="936" y2="40.0"/><text x="62" y="44.0" text-anchor="end">209.054</text></g>
+      <line class="divider" x1="759.3" y1="40" x2="759.3" y2="312"/>
+      <polygon class="band" points="778.9,183.4 818.2,167.2 857.5,157.0 896.7,153.2 936.0,145.6 936.0,290.1 896.7,274.5 857.5,257.2 818.2,233.9 778.9,218.1"/>
+      <polyline class="actual" points="72.0,69.1 111.3,152.5 150.5,181.2 189.8,209.3 229.1,245.2 268.4,257.4 307.6,256.0 346.9,248.5 386.2,242.3 425.5,232.1 464.7,221.7 504.0,204.8 543.3,224.3 582.5,206.6 621.8,202.5 661.1,198.9 700.4,202.1 739.6,204.6"/>
+      <polyline class="serie serie-regresion" points="739.6,204.6 778.9,192.5 818.2,186.1 857.5,182.0 896.7,178.1 936.0,176.0"/><polyline class="serie serie-timesfm" points="739.6,204.6 778.9,200.2 818.2,197.3 857.5,201.3 896.7,207.5 936.0,210.2"/>
+      <g class="axis"><text x="72.0" y="343" text-anchor="middle">2008</text><text x="150.5" y="343" text-anchor="middle">2010</text><text x="229.1" y="343" text-anchor="middle">2012</text><text x="307.6" y="343" text-anchor="middle">2014</text><text x="386.2" y="343" text-anchor="middle">2016</text><text x="464.7" y="343" text-anchor="middle">2018</text><text x="543.3" y="343" text-anchor="middle">2020</text><text x="621.8" y="343" text-anchor="middle">2022</text><text x="700.4" y="343" text-anchor="middle">2024</text><text x="778.9" y="343" text-anchor="middle">2026</text><text x="857.5" y="343" text-anchor="middle">2028</text><text x="936.0" y="343" text-anchor="middle">2030</text></g>
+      <g class="legend"><text class="l-actual" x="72" y="24">■ Histórico 2008–2025</text><text class="l-regresion" x="312" y="24">■ Regresión lineal</text><text class="l-timesfm" x="552" y="24">■ TimesFM 2.0</text></g>
+    </svg>
+<p class="note">La banda naranja es el intervalo q10–q90 de TimesFM.</p></section>
+<section class="card"><h2>Accidentes con baja · cifras</h2>
+<table><thead><tr><th>Año</th><th>Regresión</th><th>TimesFM 2.0</th><th>Diferencia</th><th>Diferencia %</th><th>¿Regresión dentro de q10–q90?</th></tr></thead><tbody><tr><td>2026</td><td>91.842</td><td>85.950</td><td class="down">−5.892</td><td class="down">−6,4 %</td><td>Sí</td></tr><tr><td>2027</td><td>96.788</td><td>88.180</td><td class="down">−8.608</td><td class="down">−8,9 %</td><td>Sí</td></tr><tr><td>2028</td><td>99.918</td><td>85.081</td><td class="down">−14.837</td><td class="down">−14,8 %</td><td>Sí</td></tr><tr><td>2029</td><td>102.890</td><td>80.315</td><td class="down">−22.575</td><td class="down">−21,9 %</td><td>Sí</td></tr><tr><td>2030</td><td>104.498</td><td>78.247</td><td class="down">−26.251</td><td class="down">−25,1 %</td><td>Sí</td></tr></tbody></table></section>
+
+<section class="card"><h2>Accidentes mortales</h2>
+    <svg class="chart" viewBox="0 0 960 360" role="img" aria-label="Comparativa de accidentes mortales">
+      <g class="grid"><line x1="72" y1="312.0" x2="936" y2="312.0"/><text x="62" y="316.0" text-anchor="end">0</text><line x1="72" y1="244.0" x2="936" y2="244.0"/><text x="62" y="248.0" text-anchor="end">71</text><line x1="72" y1="176.0" x2="936" y2="176.0"/><text x="62" y="180.0" text-anchor="end">142</text><line x1="72" y1="108.0" x2="936" y2="108.0"/><text x="62" y="112.0" text-anchor="end">213</text><line x1="72" y1="40.0" x2="936" y2="40.0"/><text x="62" y="44.0" text-anchor="end">283</text></g>
+      <line class="divider" x1="759.3" y1="40" x2="759.3" y2="312"/>
+      <polygon class="band" points="778.9,124.3 818.2,111.2 857.5,100.6 896.7,90.0 936.0,78.2 936.0,195.9 896.7,197.8 857.5,198.4 818.2,195.0 778.9,186.3"/>
+      <polyline class="actual" points="72.0,69.1 111.3,153.6 150.5,183.4 189.8,195.9 229.1,238.1 268.4,252.5 307.6,241.9 346.9,237.1 386.2,250.6 425.5,235.2 464.7,217.0 504.0,194.9 543.3,214.1 582.5,192.0 621.8,165.1 661.1,179.5 700.4,172.8 739.6,153.6"/>
+      <polyline class="serie serie-regresion" points="739.6,153.6 778.9,160.3 818.2,154.6 857.5,145.0 896.7,135.4 936.0,127.7"/><polyline class="serie serie-timesfm" points="739.6,153.6 778.9,157.0 818.2,153.1 857.5,148.2 896.7,140.5 936.0,131.1"/>
+      <g class="axis"><text x="72.0" y="343" text-anchor="middle">2008</text><text x="150.5" y="343" text-anchor="middle">2010</text><text x="229.1" y="343" text-anchor="middle">2012</text><text x="307.6" y="343" text-anchor="middle">2014</text><text x="386.2" y="343" text-anchor="middle">2016</text><text x="464.7" y="343" text-anchor="middle">2018</text><text x="543.3" y="343" text-anchor="middle">2020</text><text x="621.8" y="343" text-anchor="middle">2022</text><text x="700.4" y="343" text-anchor="middle">2024</text><text x="778.9" y="343" text-anchor="middle">2026</text><text x="857.5" y="343" text-anchor="middle">2028</text><text x="936.0" y="343" text-anchor="middle">2030</text></g>
+      <g class="legend"><text class="l-actual" x="72" y="24">■ Histórico 2008–2025</text><text class="l-regresion" x="312" y="24">■ Regresión lineal</text><text class="l-timesfm" x="552" y="24">■ TimesFM 2.0</text></g>
+    </svg></section>
+<section class="card"><h2>Accidentes mortales · cifras</h2>
+<table><thead><tr><th>Año</th><th>Regresión</th><th>TimesFM 2.0</th><th>Diferencia</th><th>Diferencia %</th><th>¿Regresión dentro de q10–q90?</th></tr></thead><tbody><tr><td>2026</td><td>158</td><td>162</td><td class="up">+4</td><td class="up">+2,5 %</td><td>Sí</td></tr><tr><td>2027</td><td>164</td><td>166</td><td class="up">+2</td><td class="up">+1,2 %</td><td>Sí</td></tr><tr><td>2028</td><td>174</td><td>171</td><td class="down">−3</td><td class="down">−1,7 %</td><td>Sí</td></tr><tr><td>2029</td><td>184</td><td>179</td><td class="down">−5</td><td class="down">−2,7 %</td><td>Sí</td></tr><tr><td>2030</td><td>192</td><td>189</td><td class="down">−3</td><td class="down">−1,6 %</td><td>Sí</td></tr></tbody></table></section>
+
+<section class="card"><h2>Qué diferencias aparecen</h2>
+<p><strong>Accidentes con baja:</strong> los modelos discrepan en el signo de la tendencia. Partiendo de 82.569 accidentes en 2025, la regresión sube hasta 104.498 en 2030 (+26,6 %) porque la vivienda iniciada prevista crece y arrastra la exposición. TimesFM proyecta 78.247 (−5,2 %): tras un repunte inicial, prolonga la mejora de los ratios observada en 2024–2025.</p>
+<p><strong>Mortales:</strong> aquí coinciden mucho más. Desde 165 fallecidos en 2025, la regresión llega a 192 en 2030 (+16,4 %) y TimesFM a 189 (+14,2 %). La diferencia en ese año es de −3 fallecidos, dentro del intervalo de incertidumbre del modelo fundacional.</p>
+<p><strong>Incertidumbre:</strong> TimesFM sí cuantifica su propia incertidumbre y esa es la diferencia metodológica más relevante. La banda q10–q90 de accidentes tiene una amplitud de 26.659 accidentes en 2026 y de 111.031 en 2030, señal de que con 18 datos anuales el horizonte largo es poco informativo. La regresión ofrece un único número sin banda, lo que transmite una falsa precisión.</p>
+<p class="note">Ninguna de las dos previsiones es oficial. La regresión es sensible a los supuestos de vivienda iniciada y TimesFM ignora por completo el contexto económico; la lectura útil es la comparación de trayectorias, no la cifra exacta.</p>
+</section>
+</main></body></html>

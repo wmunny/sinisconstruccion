@@ -1,0 +1,3 @@
+# TimesFM 2.0 está archivado en esta versión del paquete.
+# Requiere Python 3.10 o 3.11.
+timesfm[torch]==1.3.0

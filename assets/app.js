@@ -50,10 +50,18 @@ const REPORTS = [
   {
     slug: "simulacion",
     num: 6,
-    badge: "Escenarios",
-    title: "Simulacion 2026-2030",
-    desc: "Proyeccion por regresion, ratios normalizados y conclusiones de sostenibilidad preventiva.",
+    badge: "TimesFM 2.0",
+    title: "Prediccion 2026-2030",
+    desc: "Prevision zero-shot con TimesFM 2.0 e intervalos cuantiles.",
     file: "reports/simulacion_5_anios.html",
+  },
+  {
+    slug: "comparativa",
+    num: 7,
+    badge: "Contraste",
+    title: "Regresion vs TimesFM",
+    desc: "Diferencias entre la proyeccion por regresion y la prevision zero-shot.",
+    file: "reports/comparativa_modelos.html",
   },
 ];
 
